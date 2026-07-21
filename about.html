@@ -1197,6 +1197,17 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
 }
 .story-block.is-in{ opacity:1; transform:none; }
 
+
+/* On-brand photo placeholder — robust version (absolute-positioned label,
+   independent of parent flex/opacity/transition state) */
+.photo-placeholder{ position:relative; min-height:220px; background:linear-gradient(155deg, #2A1F42 0%, #1B142B 100%); }
+.photo-placeholder-label{
+  position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  text-align:center; padding:28px; margin:0 auto;
+  font-family:"Red Hat Display","Segoe UI",system-ui,sans-serif; font-weight:500; font-size:.8rem;
+  letter-spacing:.04em; line-height:1.5; color:rgba(234,230,243,.55); max-width:22ch;
+}
+
 /* 3-column hub-grid variant */
 @media (min-width:860px){ .hub-grid.cols-3{ grid-template-columns:repeat(3,1fr); } }
 
@@ -1391,8 +1402,9 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
   <section id="about" class="section-alt">
     <div class="wrap">
       <div class="split about-split">
-        <div class="photo-frame photo-frame--portrait split-photo photo-placeholder" data-reveal aria-hidden="true">
-          <span class="photo-placeholder-label">Photo — law school / early career era</span>
+        <div class="photo-frame photo-frame--portrait split-photo" data-reveal>
+          <div class="photo-loading" aria-hidden="true"></div>
+          <img src="https://images.unsplash.com/photo-1775163024488-e88e4a71179f?auto=format&fit=crop&w=1200&q=80" alt="Two professionals reviewing documents together at a table" loading="lazy" onerror="this.parentElement.classList.add('is-visible');this.style.display='none'">
         </div>
         <div class="split-text" data-reveal>
           <h2>Learning to speak both languages</h2>
@@ -1421,8 +1433,9 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
           <h2>Why she went solo</h2>
           <p class="lede">Going solo meant building a practice around the clients she actually wanted to work with: early-stage inventors and founders who need someone who genuinely understands the technology, can work directly with them rather than through layers of staff, and can offer pricing that fits a startup budget rather than a large firm's overhead.</p>
         </div>
-        <div class="photo-frame photo-frame--portrait split-photo photo-placeholder" data-reveal aria-hidden="true">
-          <span class="photo-placeholder-label">Photo — current practice, home office or workspace</span>
+        <div class="photo-frame photo-frame--portrait split-photo" data-reveal>
+          <div class="photo-loading" aria-hidden="true"></div>
+          <img src="https://images.unsplash.com/photo-1569748130764-3fed0c102c59?auto=format&fit=crop&w=1200&q=80" alt="Laptop on a desk in a modern workspace" loading="lazy" onerror="this.parentElement.classList.add('is-visible');this.style.display='none'">
         </div>
       </div>
     </div>

@@ -1174,6 +1174,7 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
 .faq-category .faq-item:last-child{ border-bottom:none; }
 .faq-category .faq-item .q{ font-family:"Teko","Arial Narrow",sans-serif; font-weight:600; font-size:1.3rem; color:#2A1F42; margin-bottom:4px; }
 .faq-category .faq-item > div:not(.q){ color:#635C51; font-size:.95rem; font-family:"Red Hat Display","Segoe UI",system-ui,sans-serif; }
+.faq-category .faq-item{ opacity:1!important; transform:none!important; transition:none!important; }
 
 /* Contact page — single contact card */
 .contact-methods{ display:flex; justify-content:center; margin:32px 0; }
@@ -1196,6 +1197,17 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
   transition:opacity .55s cubic-bezier(.16,1,.3,1), transform .55s cubic-bezier(.16,1,.3,1);
 }
 .story-block.is-in{ opacity:1; transform:none; }
+
+
+/* On-brand photo placeholder — robust version (absolute-positioned label,
+   independent of parent flex/opacity/transition state) */
+.photo-placeholder{ position:relative; min-height:220px; background:linear-gradient(155deg, #2A1F42 0%, #1B142B 100%); }
+.photo-placeholder-label{
+  position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  text-align:center; padding:28px; margin:0 auto;
+  font-family:"Red Hat Display","Segoe UI",system-ui,sans-serif; font-weight:500; font-size:.8rem;
+  letter-spacing:.04em; line-height:1.5; color:rgba(234,230,243,.55); max-width:22ch;
+}
 
 /* 3-column hub-grid variant */
 @media (min-width:860px){ .hub-grid.cols-3{ grid-template-columns:repeat(3,1fr); } }
@@ -1338,8 +1350,9 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
     </div>
 
     <div class="hero-paper">
-      <div class="hero-photo photo-placeholder">
-        <span class="photo-placeholder-label">Photo — attorney on a call, approachable and available</span>
+      <div class="hero-photo">
+        <div class="photo-loading" aria-hidden="true"></div>
+        <img src="/hrbac-catherine-headshot.jpeg" alt="Catherine Hrbac, founding attorney of Hrbac Law" loading="eager" onerror="this.style.display='none'">
       </div>
     </div>
   </section>

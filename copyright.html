@@ -1197,8 +1197,25 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
 }
 .story-block.is-in{ opacity:1; transform:none; }
 
+
+/* On-brand photo placeholder — robust version (absolute-positioned label,
+   independent of parent flex/opacity/transition state) */
+.photo-placeholder{ position:relative; min-height:220px; background:linear-gradient(155deg, #2A1F42 0%, #1B142B 100%); }
+.photo-placeholder-label{
+  position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  text-align:center; padding:28px; margin:0 auto;
+  font-family:"Red Hat Display","Segoe UI",system-ui,sans-serif; font-weight:500; font-size:.8rem;
+  letter-spacing:.04em; line-height:1.5; color:rgba(234,230,243,.55); max-width:22ch;
+}
+
 /* 3-column hub-grid variant */
 @media (min-width:860px){ .hub-grid.cols-3{ grid-template-columns:repeat(3,1fr); } }
+
+/* Feature list — replaces plain bulleted <ul> with brand-styled markers, 2-col at desktop */
+.feature-list{ list-style:none; margin:0 0 24px; padding:0; display:grid; gap:14px; }
+.feature-list li{ position:relative; padding-left:26px; font-size:.95rem; color:var(--text-secondary); line-height:1.5; }
+.feature-list li::before{ content:"—"; position:absolute; left:0; top:0; color:#6647D6; font-weight:700; }
+@media (min-width:860px){ .feature-list.cols-2{ grid-template-columns:1fr 1fr; column-gap:32px; } }
 
 @media (prefers-reduced-motion: reduce){
   .timing-panel, .price-card, .process-step, .faq-category, .contact-card, .story-block{
@@ -1376,11 +1393,11 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
 
   <!-- ============ WHAT'S COVERED — kept simple ============ -->
   <section>
-    <div class="wrap" style="max-width:70ch;">
+    <div class="wrap" style="max-width:820px;">
       <span class="eyebrow">Coverage</span>
       <h2>What's covered</h2>
       <p class="lede">Original creative and written work carries real value, whatever form it takes. Copyright registration applies to a wide range of it, including:</p>
-      <ul style="padding-left:20px; color:var(--text-secondary); font-size:.95rem; display:grid; gap:8px; margin:0 0 24px;">
+      <ul class="feature-list cols-2" style="margin:0 0 24px;">
         <li>Software code</li>
         <li>Written content, guides, and manuals</li>
         <li>Marketing and creative materials</li>
@@ -1397,7 +1414,7 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
         <div class="split-text">
           <span class="eyebrow">What's Included</span>
           <h2>What's included</h2>
-          <ul style="padding-left:20px; color:var(--text-secondary); font-size:.95rem; display:grid; gap:8px; margin:0;">
+          <ul class="feature-list" style="margin:0;">
             <li>Reviewing your work to confirm what's registrable</li>
             <li>Preparing your application and deposit materials</li>
             <li>Filing directly with the U.S. Copyright Office</li>
@@ -1405,8 +1422,8 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
             <li>Delivering your registration certificate once it's issued</li>
           </ul>
         </div>
-        <div class="photo-placeholder" aria-hidden="true" style="min-height:280px;">
-          <span class="photo-placeholder-label">Photo — desk, laptop, calm workspace</span>
+        <div class="split-photo" aria-hidden="true" style="min-height:280px;">
+          <img src="https://images.unsplash.com/photo-1775163024488-e88e4a71179f?auto=format&fit=crop&w=1200&q=80" alt="" loading="lazy" onerror="this.style.display='none'">
         </div>
       </div>
     </div>
@@ -1414,11 +1431,11 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
 
   <!-- ============ COMMON MISTAKES ============ -->
   <section>
-    <div class="wrap" style="max-width:70ch;">
+    <div class="wrap" style="max-width:820px;">
       <span class="eyebrow">Common Mistakes</span>
       <h2>Common mistakes we catch</h2>
       <p class="lede">Copyright applications get rejected or weakened more often than people expect. Some of the most common issues:</p>
-      <ul style="padding-left:20px; color:var(--text-secondary); font-size:.95rem; display:grid; gap:8px; margin:0;">
+      <ul class="feature-list cols-2" style="margin:0;">
         <li>Naming the wrong claimant, or missing a co-author entirely</li>
         <li>Submitting incomplete or incorrect deposit copies</li>
         <li>Misclassifying the type of work being registered</li>
