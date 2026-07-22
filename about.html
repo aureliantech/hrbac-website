@@ -1279,11 +1279,8 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
 }
 .patent-card.is-in{ opacity:1; transform:none; }
 .patent-card:hover{ border-color:#2A1F42; box-shadow:0 16px 32px -16px rgba(44,22,49,.32); }
-.patent-card .patent-img-wrap{
-  background:#F6F4F0; overflow:hidden; box-sizing:border-box;
-  height:340px; padding:20px; display:flex; align-items:center; justify-content:center;
-}
-.patent-card img{ max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; display:block; filter:grayscale(1) contrast(1.05); transition:transform .3s cubic-bezier(.4,0,.2,1); }
+.patent-card .patent-img-wrap{ overflow:hidden; line-height:0; }
+.patent-card img{ display:block; width:100%; height:auto; filter:grayscale(1) contrast(1.05); transition:transform .3s cubic-bezier(.4,0,.2,1); }
 .patent-card:hover img{ transform:scale(1.03); }
 .patent-card-body{ padding:22px 24px; }
 .patent-card .p-number{ font-family:"Red Hat Display","Segoe UI",system-ui,sans-serif; font-weight:600; font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; color:#6647D6; margin-bottom:8px; }
