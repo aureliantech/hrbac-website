@@ -606,6 +606,12 @@ h2{ font-size:var(--fs-h2); letter-spacing:-.006em; }
 }
 .hero-photo.is-in{ opacity:1; transform:none; }
 .hero-photo img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+.hero-photo img.duotone-purple{ filter:grayscale(.5) contrast(1.12) brightness(.94); }
+.hero-photo-tint{
+  position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(155deg, rgba(42,31,66,.85) 0%, rgba(124,92,246,.55) 100%);
+  mix-blend-mode:color;
+}
 .hero-photo .photo-loading{
   position:absolute; top:0; left:0; right:0; height:2px; background:rgba(251,250,248,.14); overflow:hidden; z-index:2;
 }
@@ -1239,17 +1245,8 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
     <div class="hero-paper">
       <div class="hero-photo">
         <div class="photo-loading" aria-hidden="true"></div>
-        <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-          <filter id="duotoneHero" color-interpolation-filters="sRGB">
-            <feColorMatrix type="matrix" values="0.33 0.33 0.33 0 0  0.33 0.33 0.33 0 0  0.33 0.33 0.33 0 0  0 0 0 1 0"/>
-            <feComponentTransfer>
-              <feFuncR type="table" tableValues="0.106 0.459 0.984"/>
-              <feFuncG type="table" tableValues="0.078 0.365 0.980"/>
-              <feFuncB type="table" tableValues="0.169 0.647 0.972"/>
-            </feComponentTransfer>
-          </filter>
-        </svg>
-        <img src="https://images.unsplash.com/photo-1503387837-b154d5074bd2?auto=format&fit=crop&w=1400&q=80" alt="A person drafting a technical blueprint by hand at a drafting table" loading="eager" onerror="this.style.display='none'">
+        <img class="duotone-purple" src="https://images.unsplash.com/photo-1684430598409-750ae3284704?auto=format&fit=crop&w=1400&q=80" alt="Close-up of a printed circuit board with electronic components" loading="eager" onerror="this.style.display='none'">
+        <div class="hero-photo-tint" aria-hidden="true"></div>
       </div>
     </div>
   </section>

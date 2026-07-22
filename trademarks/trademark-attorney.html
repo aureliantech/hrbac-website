@@ -606,6 +606,12 @@ h2{ font-size:var(--fs-h2); letter-spacing:-.006em; }
 }
 .hero-photo.is-in{ opacity:1; transform:none; }
 .hero-photo img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+.hero-photo img.duotone-purple{ filter:grayscale(.5) contrast(1.12) brightness(.94); }
+.hero-photo-tint{
+  position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(155deg, rgba(42,31,66,.85) 0%, rgba(124,92,246,.55) 100%);
+  mix-blend-mode:color;
+}
 .hero-photo .photo-loading{
   position:absolute; top:0; left:0; right:0; height:2px; background:rgba(251,250,248,.14); overflow:hidden; z-index:2;
 }
@@ -1407,7 +1413,8 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
     <div class="hero-paper">
       <div class="hero-photo">
         <div class="photo-loading" aria-hidden="true"></div>
-        <img src="https://images.unsplash.com/photo-1761207300250-a71b2ff68b99?auto=format&fit=crop&w=1400&q=80" alt="Shelves of colorful boutique retail displays" loading="eager" onerror="this.style.display='none'">
+        <img class="duotone-purple" src="https://images.unsplash.com/photo-1716471330475-f0669db8947a?auto=format&fit=crop&w=1400&q=80" alt="A circle of colorful graphic design swatch cards" loading="eager" onerror="this.style.display='none'">
+        <div class="hero-photo-tint" aria-hidden="true"></div>
       </div>
     </div>
   </section>
