@@ -1050,6 +1050,12 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
 .footer-brand-type .line1{ color:var(--volt-300); }
 .footer-brand-type .line2{ color:var(--f-muted); }
 .footer-bottom{ margin-top:var(--sp-6); padding-top:20px; border-top:1px solid rgba(251,250,248,.1); font-size:.82rem; color:var(--f-muted); }
+.footer-legal{ margin-top:20px; padding-top:20px; border-top:1px solid rgba(251,250,248,.08); }
+.footer-legal-label{
+  display:block; font-family:var(--font-body); font-weight:600; font-size:.68rem;
+  letter-spacing:.18em; text-transform:uppercase; color:var(--volt-300); margin-bottom:10px;
+}
+.footer-legal p{ font-size:.78rem; line-height:1.65; color:rgba(251,250,248,.42); max-width:100ch; margin:0; }
 
 @media (prefers-reduced-motion: reduce){
   .footer-col{ opacity:1!important; transform:none!important; transition:none!important; }
@@ -1273,8 +1279,11 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
 }
 .patent-card.is-in{ opacity:1; transform:none; }
 .patent-card:hover{ border-color:#2A1F42; box-shadow:0 16px 32px -16px rgba(44,22,49,.32); }
-.patent-card .patent-img-wrap{ background:#F6F4F0; overflow:hidden; }
-.patent-card img{ width:100%; height:240px; object-fit:cover; object-position:top; display:block; filter:grayscale(1) contrast(1.05); transition:transform .3s cubic-bezier(.4,0,.2,1); }
+.patent-card .patent-img-wrap{
+  background:#F6F4F0; overflow:hidden; box-sizing:border-box;
+  height:340px; padding:20px; display:flex; align-items:center; justify-content:center;
+}
+.patent-card img{ max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; display:block; filter:grayscale(1) contrast(1.05); transition:transform .3s cubic-bezier(.4,0,.2,1); }
 .patent-card:hover img{ transform:scale(1.03); }
 .patent-card-body{ padding:22px 24px; }
 .patent-card .p-number{ font-family:"Red Hat Display","Segoe UI",system-ui,sans-serif; font-weight:600; font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; color:#6647D6; margin-bottom:8px; }
@@ -1282,6 +1291,19 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
 .patent-card .p-desc{ font-size:.88rem; color:#635C51; line-height:1.5; font-family:"Red Hat Display","Segoe UI",system-ui,sans-serif; }
 @media (min-width:860px){ .patent-gallery{ grid-template-columns:repeat(3,1fr); } }
 @media (prefers-reduced-motion: reduce){ .patent-card{ opacity:1!important; transform:none!important; transition:none!important; } .patent-card:hover img{ transform:none!important; } }
+
+/* Feature list — dash-marker list matching site's brand style */
+.feature-list{ list-style:none; margin:0 0 24px; padding:0; display:grid; gap:14px; }
+.feature-list li{ position:relative; padding-left:26px; font-size:.95rem; color:var(--text-secondary); line-height:1.5; }
+.feature-list li::before{ content:"—"; position:absolute; left:0; top:0; color:#6647D6; font-weight:700; }
+
+/* Credentials — education / bar admissions two-column layout */
+.credentials-grid{ display:grid; gap:40px; margin-top:32px; }
+.credentials-col h3{
+  font-family:"Teko","Arial Narrow",sans-serif; font-weight:600; font-size:1.5rem; color:#522C5B;
+  margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid #E2DAE1;
+}
+@media (min-width:860px){ .credentials-grid{ grid-template-columns:1fr 1fr; } }
 
 /* 3-column hub-grid variant */
 @media (min-width:860px){ .hub-grid.cols-3{ grid-template-columns:repeat(3,1fr); } }
@@ -1516,6 +1538,32 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
     </div>
   </section>
 
+  <!-- ============ CREDENTIALS — education & bar admissions ============ -->
+  <section>
+    <div class="wrap" style="max-width:900px;">
+      <span class="eyebrow">Credentials</span>
+      <h2>Education &amp; bar admissions</h2>
+      <div class="credentials-grid">
+        <div class="credentials-col">
+          <h3>Education</h3>
+          <ul class="feature-list">
+            <li>J.D., Boston College Law School</li>
+            <li>B.S., Chemical Engineering, Massachusetts Institute of Technology</li>
+          </ul>
+        </div>
+        <div class="credentials-col">
+          <h3>Bar Admissions</h3>
+          <ul class="feature-list">
+            <li>United States Patent and Trademark Office</li>
+            <li>State of New York</li>
+            <li>Commonwealth of Massachusetts</li>
+            <li>U.S. District Court for the Northern District of New York</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ OFF THE CLOCK — personal interest, NOT her professional work ============ -->
   <section id="patents">
     <div class="wrap">
@@ -1697,6 +1745,10 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
     </div>
     <div class="footer-bottom">
       © Hrbac Intellectual Property Law, P.C. — All rights reserved.
+    </div>
+    <div class="footer-legal">
+      <span class="footer-legal-label">Legal Disclaimer</span>
+      <p>The information you obtain at this site is not, nor is it intended to be, legal advice. You should consult an attorney for advice regarding your individual situation. Contacting us does not create an attorney-client relationship. Please do not send any confidential information to us until such time as an attorney-client relationship has been established. Please be advised that the results achieved in any given case depend upon the exact facts and circumstances of that case. Hrbac Intellectual Property Law cannot guarantee a specific result in any legal matter. Any testimonial or case result listed on this site is based on an actual legal case and represents the results achieved in that particular case and does not constitute a guarantee, warranty, or prediction of the outcome of any other legal matter.</p>
     </div>
   </div>
 </footer>
