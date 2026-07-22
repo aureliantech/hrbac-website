@@ -52,3 +52,20 @@ No environment variables, no build command, and no `package.json` are required �
 ## Notes
 - Only one real photo is used site-wide: `hrbac-catherine-headshot.jpeg`. A few sections use verified stock photography already live on the original homepage; a couple of spots are clearly-labeled on-brand placeholders where no real photo was available — search for `photo-placeholder-label` if you want to find and replace those once you have real photography.
 - All phone links point to `tel:3152171673` and the address in the footer/contact page is `210 E. Fayette St., Syracuse, NY 13202` — update these if they're placeholders.
+
+## SEO & Social Sharing
+
+Every page now includes:
+- **Favicons** — `favicon.ico`, `favicon-16x16.png`, `favicon-32x32.png`, `apple-touch-icon.png`, `android-chrome-192x192.png`, `android-chrome-512x512.png`, plus `site.webmanifest` for Android/PWA icon support. Generated as a simple ink-purple "H" monogram matching the site's brand colors — swap these out if you get a real logo made.
+- **Social share preview** — `og-image.png` (1200×630), a branded card used for Open Graph and Twitter Card previews when links are shared on social media, iMessage, Slack, etc.
+- **Open Graph + Twitter Card meta tags** on every page, with page-specific titles/descriptions.
+- **Canonical URLs** on every page.
+- **JSON-LD structured data** (schema.org `LegalService`) on every page, so Google can show rich results (address, phone, etc.).
+- **`robots.txt`** and **`sitemap.xml`** at the site root.
+
+⚠️ **Important:** all of the above assume the domain `https://www.hrbaclaw.com`. If your real domain is different, do a find-and-replace for `https://www.hrbaclaw.com` across every `.html` file, `sitemap.xml`, and `robots.txt` before going live — otherwise canonical tags, sitemap URLs, and social preview links will point to the wrong domain.
+
+After deploying, it's worth verifying the social preview actually renders correctly using:
+- Facebook's [Sharing Debugger](https://developers.facebook.com/tools/debug/)
+- Twitter/X's card validator (share a link in a DM to preview)
+- Google's [Rich Results Test](https://search.google.com/test/rich-results) for the JSON-LD

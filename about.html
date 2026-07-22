@@ -6,6 +6,61 @@
 <title>About Catherine Hrbac — Patent Attorney &amp; Engineer</title>
 <meta name="description" content="MIT-trained chemical engineer turned patent attorney. Learn about Catherine Hrbac's path from research engineer to founding her own IP law practice.">
 
+<link rel="canonical" href="https://www.hrbaclaw.com/about">
+<meta name="theme-color" content="#2A1F42">
+<meta name="apple-mobile-web-app-title" content="Hrbac Law">
+
+<!-- Favicons -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hrbac Intellectual Property Law, P.C.">
+<meta property="og:title" content="About Catherine Hrbac — Patent Attorney &amp; Engineer">
+<meta property="og:description" content="MIT-trained chemical engineer turned patent attorney. Learn about Catherine Hrbac's path from research engineer to founding her own IP law practice.">
+<meta property="og:url" content="https://www.hrbaclaw.com/about">
+<meta property="og:image" content="https://www.hrbaclaw.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Hrbac Intellectual Property Law, P.C.">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About Catherine Hrbac — Patent Attorney &amp; Engineer">
+<meta name="twitter:description" content="MIT-trained chemical engineer turned patent attorney. Learn about Catherine Hrbac's path from research engineer to founding her own IP law practice.">
+<meta name="twitter:image" content="https://www.hrbaclaw.com/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "Hrbac Intellectual Property Law, P.C.",
+  "image": "https://www.hrbaclaw.com/og-image.png",
+  "url": "https://www.hrbaclaw.com/",
+  "telephone": "+13152171673",
+  "email": "catherine@hrbaclaw.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "210 E. Fayette St.",
+    "addressLocality": "Syracuse",
+    "addressRegion": "NY",
+    "postalCode": "13202",
+    "addressCountry": "US"
+  },
+  "areaServed": "US",
+  "priceRange": "$$",
+  "founder": {
+    "@type": "Person",
+    "name": "Catherine Hrbac"
+  }
+}
+</script>
+
 <style>
 
 /* ============================================================
@@ -1208,6 +1263,26 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
   letter-spacing:.04em; line-height:1.5; color:rgba(234,230,243,.55); max-width:22ch;
 }
 
+/* Patent gallery — real patent drawings as tangible proof of range */
+.patent-gallery{ display:grid; gap:24px; margin-top:32px; }
+.patent-card{
+  border:1px solid #DDD8CE; background:#FFFFFF; overflow:hidden;
+  opacity:0; transform:translateY(16px);
+  transition:opacity .55s cubic-bezier(.16,1,.3,1), transform .55s cubic-bezier(.16,1,.3,1),
+             box-shadow .15s cubic-bezier(.4,0,.2,1), border-color .15s cubic-bezier(.4,0,.2,1);
+}
+.patent-card.is-in{ opacity:1; transform:none; }
+.patent-card:hover{ border-color:#2A1F42; box-shadow:0 16px 32px -16px rgba(44,22,49,.32); }
+.patent-card .patent-img-wrap{ background:#F6F4F0; overflow:hidden; }
+.patent-card img{ width:100%; height:240px; object-fit:cover; object-position:top; display:block; filter:grayscale(1) contrast(1.05); transition:transform .3s cubic-bezier(.4,0,.2,1); }
+.patent-card:hover img{ transform:scale(1.03); }
+.patent-card-body{ padding:22px 24px; }
+.patent-card .p-number{ font-family:"Red Hat Display","Segoe UI",system-ui,sans-serif; font-weight:600; font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; color:#6647D6; margin-bottom:8px; }
+.patent-card .p-title{ font-family:"Teko","Arial Narrow",sans-serif; font-weight:600; font-size:1.35rem; color:#2A1F42; margin-bottom:8px; line-height:1.05; }
+.patent-card .p-desc{ font-size:.88rem; color:#635C51; line-height:1.5; font-family:"Red Hat Display","Segoe UI",system-ui,sans-serif; }
+@media (min-width:860px){ .patent-gallery{ grid-template-columns:repeat(3,1fr); } }
+@media (prefers-reduced-motion: reduce){ .patent-card{ opacity:1!important; transform:none!important; transition:none!important; } .patent-card:hover img{ transform:none!important; } }
+
 /* 3-column hub-grid variant */
 @media (min-width:860px){ .hub-grid.cols-3{ grid-template-columns:repeat(3,1fr); } }
 
@@ -1352,7 +1427,7 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
     <div class="hero-paper">
       <div class="hero-photo">
         <div class="photo-loading" aria-hidden="true"></div>
-        <img src="/hrbac-catherine-headshot.jpeg" alt="Catherine Hrbac, founding attorney of Hrbac Law" loading="eager" onerror="this.style.display='none'">
+        <img src="https://images.unsplash.com/photo-1673162802561-dd53ec4be651?auto=format&fit=crop&w=1400&q=80" alt="A bookshelf filled with books in a library" loading="eager" onerror="this.style.display='none'">
       </div>
     </div>
   </section>
@@ -1436,6 +1511,47 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
         <div class="photo-frame photo-frame--portrait split-photo" data-reveal>
           <div class="photo-loading" aria-hidden="true"></div>
           <img src="https://images.unsplash.com/photo-1569748130764-3fed0c102c59?auto=format&fit=crop&w=1200&q=80" alt="Laptop on a desk in a modern workspace" loading="lazy" onerror="this.parentElement.classList.add('is-visible');this.style.display='none'">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OFF THE CLOCK — personal interest, NOT her professional work ============ -->
+  <section id="patents">
+    <div class="wrap">
+      <span class="eyebrow">Off The Clock</span>
+      <h2>When she's not drafting patents</h2>
+      <p class="lede">Catherine climbs, backpacks, and skis. These aren't patents she worked on — just a few real ones behind gear she actually uses and finds well designed.</p>
+      <div class="patent-gallery">
+        <div class="patent-card">
+          <div class="patent-img-wrap">
+            <img src="/patents-gallery/grigri.jpg" alt="Patent drawing for a self-jamming climbing descender" loading="lazy">
+          </div>
+          <div class="patent-card-body">
+            <div class="p-number">US 5,360,083</div>
+            <div class="p-title">Safety Descender for a Rope</div>
+            <div class="p-desc">The mechanism behind the self-braking climbing device climbers know as the GriGri.</div>
+          </div>
+        </div>
+        <div class="patent-card">
+          <div class="patent-img-wrap">
+            <img src="/patents-gallery/backpack.jpg" alt="Patent drawing for an external frame backpack" loading="lazy">
+          </div>
+          <div class="patent-card-body">
+            <div class="p-number">US 5,564,612</div>
+            <div class="p-title">External Frame Backpack</div>
+            <div class="p-desc">A load-bearing frame and harness system for carrying real weight over long distances.</div>
+          </div>
+        </div>
+        <div class="patent-card">
+          <div class="patent-img-wrap">
+            <img src="/patents-gallery/ski-binding.jpg" alt="Patent drawing for a ski binding" loading="lazy">
+          </div>
+          <div class="patent-card-body">
+            <div class="p-number">US 2,236,874</div>
+            <div class="p-title">Ski Binding</div>
+            <div class="p-desc">An early release-style binding, decades ahead of its time.</div>
+          </div>
         </div>
       </div>
     </div>
@@ -1954,6 +2070,28 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
       });
     }, { threshold:0.1, rootMargin:'0px 0px -5% 0px' });
     obs.observe(document.querySelector('.footer-grid'));
+  })();
+
+  /* Patent gallery cards — staggered settle on scroll */
+  (function(){
+    var cards = document.querySelectorAll('.patent-card');
+    if (!cards.length) return;
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      cards.forEach(function(el){ el.classList.add('is-in'); });
+      return;
+    }
+    var obs = new IntersectionObserver(function(entries, o){
+      entries.forEach(function(entry){
+        if (!entry.isIntersecting) return;
+        var list = Array.prototype.slice.call(cards);
+        list.forEach(function(el, i){
+          setTimeout(function(){ el.classList.add('is-in'); }, i * 90);
+        });
+        o.disconnect();
+      });
+    }, { threshold:0.1, rootMargin:'0px 0px -10% 0px' });
+    obs.observe(document.querySelector('.patent-gallery'));
   })();
 
   /* Header — subtle shadow once the page scrolls past the top */
