@@ -1057,6 +1057,14 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
 }
 .footer-legal p{ font-size:.78rem; line-height:1.65; color:rgba(251,250,248,.42); max-width:100ch; margin:0; }
 
+/* "or email us" — quiet secondary contact option under primary CTA buttons */
+.cta-alt-contact{
+  margin:14px 0 0; font-family:"Red Hat Display","Segoe UI",system-ui,sans-serif;
+  font-size:.85rem; color:rgba(234,230,243,.6);
+}
+.cta-alt-contact a{ color:#B9A7FF; text-decoration:underline; text-underline-offset:3px; transition:color .15s ease; }
+.cta-alt-contact a:hover{ color:#FBFAF8; }
+
 @media (prefers-reduced-motion: reduce){
   .footer-col{ opacity:1!important; transform:none!important; transition:none!important; }
 }
@@ -1192,6 +1200,13 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
   .timing-item{ border-top:none; border-left:1px solid rgba(251,250,248,.15); padding:0 28px; }
   .timing-item:first-child{ border-left:none; padding-left:0; }
 }
+
+/* Pricing grid — four flat-fee service cards side by side */
+.pricing-grid{ display:grid; gap:20px; margin:32px 0 28px; }
+.pricing-grid .price-card{ max-width:none; padding:clamp(24px,3vw,32px); }
+.pricing-grid .price-amount{ font-size:clamp(2rem,1.6rem + 2vw,2.6rem); }
+@media (min-width:700px){ .pricing-grid{ grid-template-columns:1fr 1fr; } }
+@media (min-width:1100px){ .pricing-grid{ grid-template-columns:repeat(4,1fr); } }
 
 /* Price card — single flat-fee card */
 .price-card{
@@ -1408,6 +1423,7 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
         <a href="tel:3152171673" class="btn-hero-primary">Call for a Free Consultation</a>
         <a href="#price" class="link-hero-secondary">See the price ↓</a>
       </div>
+      <p class="cta-alt-contact">or <a href="mailto:catherine@hrbaclaw.com">email us</a></p>
     </div>
 
     <div class="hero-paper">
@@ -1447,24 +1463,56 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
     </div>
   </section>
 
-  <!-- ============ THE PRICE — single flat-fee card ============ -->
+  <!-- ============ THE PRICE — four flat-fee services ============ -->
   <section id="price">
     <div class="wrap">
       <span class="eyebrow">The Price</span>
-      <h2>One flat fee. No surprises on the filing itself.</h2>
-      <div class="price-card">
-        <span class="price-label">Patent Filing</span>
-        <div class="price-amount">$3,500</div>
-        <div class="price-unit">flat fee, per patent</div>
-        <ul class="price-includes">
-          <li>Invention disclosure meeting</li>
-          <li>A fully drafted application, including claims</li>
-          <li>Your review before anything is filed</li>
-          <li>Filing with the USPTO</li>
-        </ul>
-        <p class="price-note">This covers your initial filing. Anything beyond that — like responding to the patent office — is discussed directly and laid out clearly in your engagement letter.</p>
-        <a href="tel:3152171673" class="btn-header-primary" style="display:inline-flex; margin-top:8px;">Call for a Free Consultation</a>
+      <h2>Flat fees. No surprises on the filing itself.</h2>
+      <p class="lede">One flat fee per filing, agreed upfront — so you know exactly what each service costs before we begin.</p>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <span class="price-label">Patent Filing</span>
+          <div class="price-amount">$5,500</div>
+          <div class="price-unit">flat fee, per patent</div>
+          <ul class="price-includes">
+            <li>Invention disclosure meeting</li>
+            <li>A fully drafted application, including claims</li>
+            <li>Your review before anything is filed</li>
+            <li>Filing with the USPTO</li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <span class="price-label">Provisional Patent</span>
+          <div class="price-amount">$2,000</div>
+          <div class="price-unit">flat fee, per filing</div>
+          <ul class="price-includes">
+            <li>Invention disclosure meeting</li>
+            <li>A provisional application establishing your filing date</li>
+            <li>Filing with the USPTO</li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <span class="price-label">Trademark Filing</span>
+          <div class="price-amount">$800</div>
+          <div class="price-unit">flat fee, per mark</div>
+          <ul class="price-includes">
+            <li>Trademark search &amp; review</li>
+            <li>Application preparation</li>
+            <li>Filing with the USPTO</li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <span class="price-label">Copyright Registration</span>
+          <div class="price-amount">$300</div>
+          <div class="price-unit">flat fee, per work</div>
+          <ul class="price-includes">
+            <li>Application preparation</li>
+            <li>Filing with the U.S. Copyright Office</li>
+          </ul>
+        </div>
       </div>
+      <p class="price-note">This covers your initial filing for each service. Anything beyond that — like responding to the patent office — is discussed directly and laid out clearly in your engagement letter.</p>
+      <a href="tel:3152171673" class="btn-header-primary" style="display:inline-flex;">Call for a Free Consultation</a>
     </div>
   </section>
 
@@ -1543,6 +1591,7 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
       <a href="tel:3152171673" class="btn-hero-primary">
         Call for a Free Consultation
       </a>
+      <p class="cta-alt-contact" style="text-align:center;">or <a href="mailto:catherine@hrbaclaw.com">email us</a></p>
     </div>
   </section>
 
@@ -2012,23 +2061,27 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
     panels.forEach(function(el){ obs.observe(el); });
   })();
 
-  /* Price card — quiet settle on scroll */
+  /* Price cards — staggered settle on scroll */
   (function(){
-    var card = document.querySelector('.price-card');
-    if (!card) return;
+    var cards = document.querySelectorAll('.price-card');
+    if (!cards.length) return;
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reduceMotion || !('IntersectionObserver' in window)) {
-      card.classList.add('is-in');
+      cards.forEach(function(el){ el.classList.add('is-in'); });
       return;
     }
     var obs = new IntersectionObserver(function(entries, o){
       entries.forEach(function(entry){
         if (!entry.isIntersecting) return;
-        card.classList.add('is-in');
+        var list = Array.prototype.slice.call(cards);
+        list.forEach(function(el, i){
+          setTimeout(function(){ el.classList.add('is-in'); }, i * 90);
+        });
         o.disconnect();
       });
-    }, { threshold:0.2, rootMargin:'0px 0px -10% 0px' });
-    obs.observe(card);
+    }, { threshold:0.15, rootMargin:'0px 0px -10% 0px' });
+    var container = document.querySelector('.pricing-grid') || cards[0];
+    obs.observe(container);
   })();
 
   /* Detailed process steps — staggered settle on scroll */

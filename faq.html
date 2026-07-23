@@ -1057,6 +1057,14 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
 }
 .footer-legal p{ font-size:.78rem; line-height:1.65; color:rgba(251,250,248,.42); max-width:100ch; margin:0; }
 
+/* "or email us" — quiet secondary contact option under primary CTA buttons */
+.cta-alt-contact{
+  margin:14px 0 0; font-family:"Red Hat Display","Segoe UI",system-ui,sans-serif;
+  font-size:.85rem; color:rgba(234,230,243,.6);
+}
+.cta-alt-contact a{ color:#B9A7FF; text-decoration:underline; text-underline-offset:3px; transition:color .15s ease; }
+.cta-alt-contact a:hover{ color:#FBFAF8; }
+
 @media (prefers-reduced-motion: reduce){
   .footer-col{ opacity:1!important; transform:none!important; transition:none!important; }
 }
@@ -1408,6 +1416,7 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
       <div class="hero-ctas">
         <a href="tel:3152171673" class="btn-hero-primary">Call for a Free Consultation</a>
       </div>
+      <p class="cta-alt-contact">or <a href="mailto:catherine@hrbaclaw.com">email us</a></p>
     </div>
 
     <div class="hero-paper">
@@ -1460,10 +1469,6 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
           <div class="q">Can I patent software if it's mostly a new interface?</div>
           <div>Software patents generally need to show a specific technical improvement, not just a new interface — we can help evaluate whether your invention meets that bar.</div>
         </div>
-        <div class="faq-item">
-          <div class="q">Can I patent a machine learning model on its own?</div>
-          <div>Generally, the model itself needs to be tied to a specific technical application or improvement — not just a mathematical concept. We can help evaluate whether your invention meets that bar.</div>
-        </div>
       </div>
 
       <div class="faq-category">
@@ -1513,6 +1518,7 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
       <a href="tel:3152171673" class="btn-hero-primary">
         Call for a Free Consultation
       </a>
+      <p class="cta-alt-contact" style="text-align:center;">or <a href="mailto:catherine@hrbaclaw.com">email us</a></p>
     </div>
   </section>
 

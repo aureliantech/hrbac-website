@@ -1063,6 +1063,14 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
 }
 .footer-legal p{ font-size:.78rem; line-height:1.65; color:rgba(251,250,248,.42); max-width:100ch; margin:0; }
 
+/* "or email us" — quiet secondary contact option under primary CTA buttons */
+.cta-alt-contact{
+  margin:14px 0 0; font-family:"Red Hat Display","Segoe UI",system-ui,sans-serif;
+  font-size:.85rem; color:rgba(234,230,243,.6);
+}
+.cta-alt-contact a{ color:#B9A7FF; text-decoration:underline; text-underline-offset:3px; transition:color .15s ease; }
+.cta-alt-contact a:hover{ color:#FBFAF8; }
+
 @media (prefers-reduced-motion: reduce){
   .footer-col{ opacity:1!important; transform:none!important; transition:none!important; }
 }
@@ -1236,7 +1244,7 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
         <span class="eyebrow-hero">Registered Patent Attorney</span>
       </div>
 
-      <h1>Patent protection from someone who actually understands your invention.</h1>
+      <h1>Patent protection from someone who understands your invention.</h1>
 
       <p class="lede">Engineer-turned-attorney. Flat-fee filings. Free consultation.</p>
 
@@ -1246,12 +1254,13 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
         <a href="tel:3152171673" class="btn-hero-primary">Call for a Free Consultation</a>
         <a href="/process" class="link-hero-secondary">See how it works</a>
       </div>
+      <p class="cta-alt-contact">or <a href="mailto:catherine@hrbaclaw.com">email us</a></p>
     </div>
 
     <div class="hero-paper">
       <div class="hero-photo">
         <div class="photo-loading" aria-hidden="true"></div>
-        <img class="duotone-purple" src="https://images.unsplash.com/photo-1684430598409-750ae3284704?auto=format&fit=crop&w=1400&q=80" alt="Close-up of a printed circuit board with electronic components" loading="eager" onerror="this.style.display='none'">
+        <img class="duotone-purple" src="https://images.unsplash.com/photo-1546016366-f58281251e3d?auto=format&fit=crop&w=1400&q=80" alt="Hand-drawn concept sketches on paper, representing early-stage invention ideas" loading="eager" onerror="this.style.display='none'">
         <div class="hero-photo-tint" aria-hidden="true"></div>
       </div>
     </div>
@@ -1440,6 +1449,7 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
       <a href="tel:3152171673" class="btn-hero-primary">
         Call for a Free Consultation
       </a>
+      <p class="cta-alt-contact" style="text-align:center;">or <a href="mailto:catherine@hrbaclaw.com">email us</a></p>
     </div>
   </section>
 
