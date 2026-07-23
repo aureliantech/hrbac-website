@@ -1231,19 +1231,53 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
 .process-step .p-title{ font-family:"Teko","Arial Narrow",sans-serif; font-weight:600; font-size:1.3rem; color:#2A1F42; margin-bottom:6px; }
 .process-step .p-desc{ color:#635C51; font-size:.95rem; margin:0; font-family:"Red Hat Display","Segoe UI",system-ui,sans-serif; }
 
-/* Full FAQ page — grouped categories */
+/* Full FAQ page — quick-jump nav + accordion by category */
+.faq-jumpnav{
+  display:flex; flex-wrap:wrap; gap:10px; margin:0 0 64px; padding:0; list-style:none;
+}
+.faq-jumpnav a{
+  font-family:"Red Hat Display","Segoe UI",system-ui,sans-serif; font-weight:600; font-size:.82rem;
+  color:#522C5B; border:1px solid #DDD8CE; background:#FFFFFF; padding:9px 20px; border-radius:999px;
+  display:inline-block; transition:background-color .15s ease, border-color .15s ease, color .15s ease;
+}
+.faq-jumpnav a:hover{ background:#2A1F42; border-color:#2A1F42; color:#FBFAF8; }
+
 .faq-category{
-  margin-bottom:40px; opacity:0; transform:translateY(14px);
+  margin-bottom:60px; scroll-margin-top:110px;
+  opacity:0; transform:translateY(14px);
   transition:opacity .5s cubic-bezier(.16,1,.3,1), transform .5s cubic-bezier(.16,1,.3,1);
 }
 .faq-category.is-in{ opacity:1; transform:none; }
 .faq-category:last-child{ margin-bottom:0; }
-.faq-category h3{ font-family:"Teko","Arial Narrow",sans-serif; font-weight:600; font-size:1.7rem; color:#522C5B; margin-bottom:10px; padding-bottom:10px; border-bottom:1px solid #E2DAE1; }
-.faq-category .faq-item{ display:flex; gap:20px; align-items:flex-start; padding:22px 0; border-bottom:1px solid #DDD8CE; }
-.faq-category .faq-item:last-child{ border-bottom:none; }
-.faq-category .faq-item .q{ font-family:"Teko","Arial Narrow",sans-serif; font-weight:600; font-size:1.3rem; color:#2A1F42; margin-bottom:4px; }
-.faq-category .faq-item > div:not(.q){ color:#635C51; font-size:.95rem; font-family:"Red Hat Display","Segoe UI",system-ui,sans-serif; }
-.faq-category .faq-item{ opacity:1!important; transform:none!important; transition:none!important; }
+.faq-category-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:20px; }
+.faq-category-head .idx{
+  font-family:"Teko","Arial Narrow",sans-serif; font-weight:600; font-size:1rem; color:#B9A7FF;
+  background:#2A1F42; width:30px; height:30px; border-radius:2px;
+  display:inline-flex; align-items:center; justify-content:center; flex:0 0 auto;
+}
+.faq-category h3{ font-family:"Teko","Arial Narrow",sans-serif; font-weight:600; font-size:1.9rem; color:#2A1F42; margin:0; }
+
+.faq-accordion{ border-top:1px solid #DDD8CE; }
+.faq-acc-item{ border-bottom:1px solid #DDD8CE; }
+.faq-q{
+  display:flex; align-items:center; justify-content:space-between; gap:24px;
+  padding:24px 2px; cursor:pointer; list-style:none;
+}
+.faq-q::-webkit-details-marker{ display:none; }
+.faq-q .q-text{
+  font-family:"Teko","Arial Narrow",sans-serif; font-weight:600; font-size:1.28rem; color:#2A1F42;
+  transition:color .15s ease;
+}
+.faq-acc-item:hover .q-text{ color:#6647D6; }
+.faq-q .q-icon{ flex:0 0 auto; width:26px; height:26px; position:relative; }
+.faq-q .q-icon::before, .faq-q .q-icon::after{
+  content:""; position:absolute; top:50%; left:50%; background:#6647D6;
+  transform:translate(-50%,-50%); transition:opacity .15s ease;
+}
+.faq-q .q-icon::before{ width:14px; height:2px; }
+.faq-q .q-icon::after{ width:2px; height:14px; }
+.faq-acc-item[open] .faq-q .q-icon::after{ opacity:0; }
+.faq-a{ padding:0 2px 26px; max-width:70ch; color:#635C51; font-size:.98rem; line-height:1.65; font-family:"Red Hat Display","Segoe UI",system-ui,sans-serif; }
 
 /* Contact page — single contact card */
 .contact-methods{ display:flex; justify-content:center; margin:32px 0; }
@@ -1427,83 +1461,101 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
     </div>
   </section>
 
-  <!-- ============ FULL FAQ — organized by category ============ -->
+  <!-- ============ FULL FAQ — quick-jump nav + accordion by category ============ -->
   <section id="faq">
     <div class="wrap" style="max-width:74ch;">
 
-      <div class="faq-category">
-        <h3>General</h3>
-        <div class="faq-item">
-          <div class="q">Will I work directly with you, or get handed off to someone else?</div>
-          <div>You work directly with your attorney throughout — not a rotating team or junior staff.</div>
+      <ul class="faq-jumpnav">
+        <li><a href="#cat-general">General</a></li>
+        <li><a href="#cat-patents">Patents</a></li>
+        <li><a href="#cat-pricing">Pricing</a></li>
+        <li><a href="#cat-trademarks">Trademarks</a></li>
+        <li><a href="#cat-copyright">Copyright</a></li>
+      </ul>
+
+      <div class="faq-category" id="cat-general">
+        <div class="faq-category-head"><span class="idx">01</span><h3>General</h3></div>
+        <div class="faq-accordion">
+          <details class="faq-acc-item">
+            <summary class="faq-q"><span class="q-text">Will I work directly with you, or get handed off to someone else?</span><span class="q-icon" aria-hidden="true"></span></summary>
+            <div class="faq-a">You work directly with your attorney throughout — not a rotating team or junior staff.</div>
+          </details>
         </div>
       </div>
 
-      <div class="faq-category">
-        <h3>Patents</h3>
-        <div class="faq-item">
-          <div class="q">What does "patent prosecution" actually mean?</div>
-          <div>It's the legal term for the process of getting a patent granted — drafting, filing, and responding to the patent office until a patent either issues or the process ends. It has nothing to do with criminal prosecution.</div>
-        </div>
-        <div class="faq-item">
-          <div class="q">What if my invention doesn't fit a specific category?</div>
-          <div>That's exactly what the general patent practice is for. If your invention is a well-defined technical innovation, there's a good chance it's still a fit — reach out and we'll talk through the specifics.</div>
-        </div>
-        <div class="faq-item">
-          <div class="q">What happens if my patent application is rejected the first time?</div>
-          <div>It's a normal, expected step — not a sign anything went wrong. We respond directly to the examiner and work with you on any adjustments to the claims.</div>
-        </div>
-        <div class="faq-item">
-          <div class="q">Do I need to do anything after my patent is granted?</div>
-          <div>Just keep up with maintenance fees, which keep the patent active. We track those deadlines and let you know when payment is due.</div>
-        </div>
-        <div class="faq-item">
-          <div class="q">Should I get FDA clearance before I file a patent?</div>
-          <div>Patent timing isn't tied to FDA clearance — the key trigger is public disclosure or sale. We can help you think through sequencing based on your product and funding timeline.</div>
-        </div>
-        <div class="faq-item">
-          <div class="q">My invention is still a prototype. Is it too early to file?</div>
-          <div>Not necessarily. You don't need a finished, market-ready product — just an invention that's clearly defined enough to describe and claim.</div>
-        </div>
-        <div class="faq-item">
-          <div class="q">Can I patent software if it's mostly a new interface?</div>
-          <div>Software patents generally need to show a specific technical improvement, not just a new interface — we can help evaluate whether your invention meets that bar.</div>
-        </div>
-      </div>
-
-      <div class="faq-category">
-        <h3>Pricing</h3>
-        <div class="faq-item">
-          <div class="q">Does the flat fee cover the entire patent process?</div>
-          <div>It covers your initial filing — the disclosure meeting, drafting, and submission to the USPTO. Anything beyond that is discussed directly and outlined in your engagement letter.</div>
-        </div>
-        <div class="faq-item">
-          <div class="q">When do I pay?</div>
-          <div>Payment details are laid out in your engagement letter after your free consultation.</div>
+      <div class="faq-category" id="cat-patents">
+        <div class="faq-category-head"><span class="idx">02</span><h3>Patents</h3></div>
+        <div class="faq-accordion">
+          <details class="faq-acc-item">
+            <summary class="faq-q"><span class="q-text">What does "patent prosecution" actually mean?</span><span class="q-icon" aria-hidden="true"></span></summary>
+            <div class="faq-a">It's the legal term for the process of getting a patent granted — drafting, filing, and responding to the patent office until a patent either issues or the process ends. It has nothing to do with criminal prosecution.</div>
+          </details>
+          <details class="faq-acc-item">
+            <summary class="faq-q"><span class="q-text">What if my invention doesn't fit a specific category?</span><span class="q-icon" aria-hidden="true"></span></summary>
+            <div class="faq-a">That's exactly what the general patent practice is for. If your invention is a well-defined technical innovation, there's a good chance it's still a fit — reach out and we'll talk through the specifics.</div>
+          </details>
+          <details class="faq-acc-item">
+            <summary class="faq-q"><span class="q-text">What happens if my patent application is rejected the first time?</span><span class="q-icon" aria-hidden="true"></span></summary>
+            <div class="faq-a">It's a normal, expected step — not a sign anything went wrong. We respond directly to the examiner and work with you on any adjustments to the claims.</div>
+          </details>
+          <details class="faq-acc-item">
+            <summary class="faq-q"><span class="q-text">Do I need to do anything after my patent is granted?</span><span class="q-icon" aria-hidden="true"></span></summary>
+            <div class="faq-a">Just keep up with maintenance fees, which keep the patent active. We track those deadlines and let you know when payment is due.</div>
+          </details>
+          <details class="faq-acc-item">
+            <summary class="faq-q"><span class="q-text">Should I get FDA clearance before I file a patent?</span><span class="q-icon" aria-hidden="true"></span></summary>
+            <div class="faq-a">Patent timing isn't tied to FDA clearance — the key trigger is public disclosure or sale. We can help you think through sequencing based on your product and funding timeline.</div>
+          </details>
+          <details class="faq-acc-item">
+            <summary class="faq-q"><span class="q-text">My invention is still a prototype. Is it too early to file?</span><span class="q-icon" aria-hidden="true"></span></summary>
+            <div class="faq-a">Not necessarily. You don't need a finished, market-ready product — just an invention that's clearly defined enough to describe and claim.</div>
+          </details>
+          <details class="faq-acc-item">
+            <summary class="faq-q"><span class="q-text">Can I patent software if it's mostly a new interface?</span><span class="q-icon" aria-hidden="true"></span></summary>
+            <div class="faq-a">Software patents generally need to show a specific technical improvement, not just a new interface — we can help evaluate whether your invention meets that bar.</div>
+          </details>
         </div>
       </div>
 
-      <div class="faq-category">
-        <h3>Trademarks</h3>
-        <div class="faq-item">
-          <div class="q">What's the difference between a trademark and a patent?</div>
-          <div>A trademark protects a brand identifier — like a name, logo, or slogan. A patent protects an invention. Many businesses eventually need both, but they're separate types of protection.</div>
-        </div>
-        <div class="faq-item">
-          <div class="q">How long does trademark registration take?</div>
-          <div>It varies, but trademark applications generally move faster than patents, often clearing in just one or two rounds of back-and-forth with the trademark office.</div>
+      <div class="faq-category" id="cat-pricing">
+        <div class="faq-category-head"><span class="idx">03</span><h3>Pricing</h3></div>
+        <div class="faq-accordion">
+          <details class="faq-acc-item">
+            <summary class="faq-q"><span class="q-text">Does the flat fee cover the entire patent process?</span><span class="q-icon" aria-hidden="true"></span></summary>
+            <div class="faq-a">It covers your initial filing — the disclosure meeting, drafting, and submission to the USPTO. Anything beyond that is discussed directly and outlined in your engagement letter.</div>
+          </details>
+          <details class="faq-acc-item">
+            <summary class="faq-q"><span class="q-text">When do I pay?</span><span class="q-icon" aria-hidden="true"></span></summary>
+            <div class="faq-a">Payment details are laid out in your engagement letter after your free consultation.</div>
+          </details>
         </div>
       </div>
 
-      <div class="faq-category">
-        <h3>Copyright</h3>
-        <div class="faq-item">
-          <div class="q">How is copyright different from a trademark or patent?</div>
-          <div>Copyright protects original creative or written work, like code or written content. A trademark protects your brand identity. A patent protects an invention. Many businesses eventually need more than one type of protection.</div>
+      <div class="faq-category" id="cat-trademarks">
+        <div class="faq-category-head"><span class="idx">04</span><h3>Trademarks</h3></div>
+        <div class="faq-accordion">
+          <details class="faq-acc-item">
+            <summary class="faq-q"><span class="q-text">What's the difference between a trademark and a patent?</span><span class="q-icon" aria-hidden="true"></span></summary>
+            <div class="faq-a">A trademark protects a brand identifier — like a name, logo, or slogan. A patent protects an invention. Many businesses eventually need both, but they're separate types of protection.</div>
+          </details>
+          <details class="faq-acc-item">
+            <summary class="faq-q"><span class="q-text">How long does trademark registration take?</span><span class="q-icon" aria-hidden="true"></span></summary>
+            <div class="faq-a">It varies, but trademark applications generally move faster than patents, often clearing in just one or two rounds of back-and-forth with the trademark office.</div>
+          </details>
         </div>
-        <div class="faq-item">
-          <div class="q">Why does registering my copyright early matter?</div>
-          <div>Registering promptly affects your options if someone infringes your work later — including the ability to pursue statutory damages and attorney's fees, which are often unavailable for infringement that happened before registration.</div>
+      </div>
+
+      <div class="faq-category" id="cat-copyright">
+        <div class="faq-category-head"><span class="idx">05</span><h3>Copyright</h3></div>
+        <div class="faq-accordion">
+          <details class="faq-acc-item">
+            <summary class="faq-q"><span class="q-text">How is copyright different from a trademark or patent?</span><span class="q-icon" aria-hidden="true"></span></summary>
+            <div class="faq-a">Copyright protects original creative or written work, like code or written content. A trademark protects your brand identity. A patent protects an invention. Many businesses eventually need more than one type of protection.</div>
+          </details>
+          <details class="faq-acc-item">
+            <summary class="faq-q"><span class="q-text">Why does registering my copyright early matter?</span><span class="q-icon" aria-hidden="true"></span></summary>
+            <div class="faq-a">Registering promptly affects your options if someone infringes your work later — including the ability to pursue statutory damages and attorney's fees, which are often unavailable for infringement that happened before registration.</div>
+          </details>
         </div>
       </div>
 

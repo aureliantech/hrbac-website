@@ -1283,14 +1283,39 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
   letter-spacing:.04em; line-height:1.5; color:rgba(234,230,243,.55); max-width:22ch;
 }
 
+/* Info card grid — mobile-first: single column by default, 2-up from tablet width */
+.info-grid{ display:grid; gap:14px; margin:28px 0 28px; }
+@media (min-width:640px){ .info-grid{ grid-template-columns:1fr 1fr; gap:16px; } }
+
+.info-card{
+  display:flex; gap:16px; align-items:flex-start;
+  border:1px solid #DDD8CE; background:#FFFFFF; padding:20px 22px;
+  transition:border-color .15s ease, box-shadow .15s ease;
+}
+.info-card:hover{ border-color:#2A1F42; box-shadow:0 12px 28px -18px rgba(44,22,49,.28); }
+.info-card .info-mark{
+  flex:0 0 auto; width:34px; height:34px; border-radius:2px;
+  background:#2A1F42; color:#B9A7FF;
+  display:flex; align-items:center; justify-content:center;
+  font-family:"Teko","Arial Narrow",sans-serif; font-weight:600; font-size:1.05rem;
+}
+.info-card .info-text{ font-size:.95rem; color:#2A1F42; line-height:1.5; padding-top:5px; }
+
+/* Warning variant — same shape, amber accent, for "common mistakes" style content */
+.info-card.warn .info-mark{ background:#F6EFE3; color:#B98A2E; }
+
+/* Ordered checklist — for sequential "what's included" style content */
+.checklist{ list-style:none; margin:0; padding:0; display:grid; gap:14px; }
+.checklist li{ position:relative; padding-left:30px; font-size:.95rem; color:var(--text-secondary); line-height:1.5; }
+.checklist li::before{
+  content:"✓"; position:absolute; left:0; top:0; width:20px; height:20px;
+  display:flex; align-items:center; justify-content:center;
+  color:#6647D6; font-weight:700; font-size:.85rem;
+  border:1px solid #B9A7FF; border-radius:2px;
+}
+
 /* 3-column hub-grid variant */
 @media (min-width:860px){ .hub-grid.cols-3{ grid-template-columns:repeat(3,1fr); } }
-
-/* Feature list — replaces plain bulleted <ul> with brand-styled markers, 2-col at desktop */
-.feature-list{ list-style:none; margin:0 0 24px; padding:0; display:grid; gap:14px; }
-.feature-list li{ position:relative; padding-left:26px; font-size:.95rem; color:var(--text-secondary); line-height:1.5; }
-.feature-list li::before{ content:"—"; position:absolute; left:0; top:0; color:#6647D6; font-weight:700; }
-@media (min-width:860px){ .feature-list.cols-2{ grid-template-columns:1fr 1fr; column-gap:32px; } }
 
 @media (prefers-reduced-motion: reduce){
   .timing-panel, .price-card, .process-step, .faq-category, .contact-card, .story-block{
@@ -1474,12 +1499,24 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
       <span class="eyebrow">Coverage</span>
       <h2>What's covered</h2>
       <p class="lede">Original creative and written work carries real value, whatever form it takes. Copyright registration applies to a wide range of it, including:</p>
-      <ul class="feature-list cols-2" style="margin:0 0 24px;">
-        <li>Software code</li>
-        <li>Written content, guides, and manuals</li>
-        <li>Marketing and creative materials</li>
-        <li>Other original creative work</li>
-      </ul>
+      <div class="info-grid">
+        <div class="info-card">
+          <span class="info-mark" aria-hidden="true">01</span>
+          <span class="info-text">Software code</span>
+        </div>
+        <div class="info-card">
+          <span class="info-mark" aria-hidden="true">02</span>
+          <span class="info-text">Written content, guides, and manuals</span>
+        </div>
+        <div class="info-card">
+          <span class="info-mark" aria-hidden="true">03</span>
+          <span class="info-text">Marketing and creative materials</span>
+        </div>
+        <div class="info-card">
+          <span class="info-mark" aria-hidden="true">04</span>
+          <span class="info-text">Other original creative work</span>
+        </div>
+      </div>
       <p style="font-size:.9rem; color:var(--text-secondary);">Not seeing what you're registering? Reach out — copyright covers a wide range of original work, and there's a good chance yours qualifies.</p>
     </div>
   </section>
@@ -1491,7 +1528,7 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
         <div class="split-text">
           <span class="eyebrow">What's Included</span>
           <h2>What's included</h2>
-          <ul class="feature-list" style="margin:0;">
+          <ul class="checklist">
             <li>Reviewing your work to confirm what's registrable</li>
             <li>Preparing your application and deposit materials</li>
             <li>Filing directly with the U.S. Copyright Office</li>
@@ -1512,12 +1549,24 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
       <span class="eyebrow">Common Mistakes</span>
       <h2>Common mistakes we catch</h2>
       <p class="lede">Copyright applications get rejected or weakened more often than people expect. Some of the most common issues:</p>
-      <ul class="feature-list cols-2" style="margin:0;">
-        <li>Naming the wrong claimant, or missing a co-author entirely</li>
-        <li>Submitting incomplete or incorrect deposit copies</li>
-        <li>Misclassifying the type of work being registered</li>
-        <li>Missing details that affect ownership if the work was made with others</li>
-      </ul>
+      <div class="info-grid">
+        <div class="info-card warn">
+          <span class="info-mark" aria-hidden="true">!</span>
+          <span class="info-text">Naming the wrong claimant, or missing a co-author entirely</span>
+        </div>
+        <div class="info-card warn">
+          <span class="info-mark" aria-hidden="true">!</span>
+          <span class="info-text">Submitting incomplete or incorrect deposit copies</span>
+        </div>
+        <div class="info-card warn">
+          <span class="info-mark" aria-hidden="true">!</span>
+          <span class="info-text">Misclassifying the type of work being registered</span>
+        </div>
+        <div class="info-card warn">
+          <span class="info-mark" aria-hidden="true">!</span>
+          <span class="info-text">Missing details that affect ownership if the work was made with others</span>
+        </div>
+      </div>
     </div>
   </section>
 
