@@ -1038,6 +1038,7 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
 .footer-grid a:not(.btn-hero-primary):hover::after{ transform:scaleX(1); }
 .footer-grid a.btn-hero-primary{ font-family:var(--font-body); font-size:.82rem; letter-spacing:.05em; color:var(--ink-900); }
 .footer-grid a.btn-hero-primary:hover{ color:var(--ink-900); }
+.footer-grid a.btn-outline-light:hover{ color:#2A1F42; }
 .footer-grid a:hover{ color:var(--bone-25); }
 .footer-grid li{ color:var(--f-muted); font-size:.95rem; }
 .footer-brand-row{ display:flex; align-items:center; gap:12px; margin-bottom:14px; }
@@ -1056,6 +1057,23 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
   letter-spacing:.18em; text-transform:uppercase; color:var(--volt-300); margin-bottom:10px;
 }
 .footer-legal p{ font-size:.78rem; line-height:1.65; color:rgba(251,250,248,.42); max-width:100ch; margin:0; }
+
+/* Dual CTA — Talk Now + Send Email side by side */
+.dual-cta{ display:flex; gap:14px; flex-wrap:wrap; }
+.btn-outline-dark{
+  display:inline-flex; align-items:center; justify-content:center;
+  font-family:"Red Hat Display","Segoe UI",system-ui,sans-serif; font-weight:600; font-size:.85rem; letter-spacing:.05em;
+  padding:1.05em 2.2em; border-radius:2px; border:1.5px solid #2A1F42; color:#2A1F42; background:transparent;
+  transition:background-color .15s ease, color .15s ease;
+}
+.btn-outline-dark:hover{ background:#2A1F42; color:#FBFAF8; border-color:#2A1F42; }
+.btn-outline-light{
+  display:inline-flex; align-items:center; justify-content:center;
+  font-family:"Red Hat Display","Segoe UI",system-ui,sans-serif; font-weight:600; font-size:.85rem; letter-spacing:.05em;
+  padding:1.05em 2.2em; border-radius:2px; border:1.5px solid #FBFAF8; color:#FBFAF8; background:transparent;
+  transition:background-color .15s ease, color .15s ease;
+}
+.btn-outline-light:hover{ background:#FBFAF8; color:#2A1F42; }
 
 /* "or email us" — quiet secondary contact option under primary CTA buttons */
 .cta-alt-contact{
@@ -1309,7 +1327,7 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
         <li><a href="/faq">FAQ</a></li>
       </ul>
     </nav>
-    <a class="btn-header-primary header-cta" href="tel:3152171673">Call for a Free Consultation</a>
+    <a class="btn-header-primary header-cta" href="tel:3152171673">Talk Now</a>
     <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">
       <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 5h14M3 10h14M3 15h14"/></svg>
       Menu
@@ -1378,7 +1396,10 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
       <li><a href="/process">How It Works</a></li>
       <li><a href="/faq">FAQ</a></li>
     </ul>
-    <a href="tel:3152171673" class="btn-header-primary" style="display:inline-flex; width:100%; margin-top:14px; padding:.9em 1.5em;">Call for a Free Consultation</a>
+    <div class="dual-cta" style="width:100%; margin-top:14px;">
+      <a href="tel:3152171673" class="btn-header-primary" style="flex:1; padding:.9em 1em;">Talk Now</a>
+      <a href="mailto:catherine@hrbaclaw.com" class="btn-outline-dark" style="flex:1; padding:.9em 1em;">Send Email</a>
+    </div>
   </nav>
 </header>
 
@@ -1402,10 +1423,10 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
       <div class="hero-rule" aria-hidden="true"></div>
 
       <div class="hero-ctas">
-        <a href="tel:3152171673" class="btn-hero-primary">Call for a Free Consultation</a>
+        <a href="tel:3152171673" class="btn-hero-primary">Talk Now</a>
+        <a href="mailto:catherine@hrbaclaw.com" class="btn-outline-light">Send Email</a>
         <a href="#find-area" class="link-hero-secondary">Find your technology area ↓</a>
       </div>
-      <p class="cta-alt-contact">or <a href="mailto:catherine@hrbaclaw.com">email us</a></p>
     </div>
 
     <div class="hero-paper">
@@ -1621,10 +1642,10 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
     <div class="wrap">
       <span class="eyebrow-cta">Free Consultation</span>
       <h2>Ready to protect your invention?</h2>
-      <a href="tel:3152171673" class="btn-hero-primary">
-        Call for a Free Consultation
-      </a>
-      <p class="cta-alt-contact" style="text-align:center;">or <a href="mailto:catherine@hrbaclaw.com">email us</a></p>
+      <div class="dual-cta" style="justify-content:center;">
+        <a href="tel:3152171673" class="btn-hero-primary">Talk Now</a>
+        <a href="mailto:catherine@hrbaclaw.com" class="btn-outline-light">Send Email</a>
+      </div>
     </div>
   </section>
 
@@ -1676,7 +1697,10 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
           <li><a href="tel:3152171673">(315) 217-1673</a></li>
           <li><a href="mailto:catherine@hrbaclaw.com">catherine@hrbaclaw.com</a></li>
         </ul>
-        <a href="tel:3152171673" class="btn-hero-primary" style="margin-top:16px;">Call Now</a>
+        <div class="dual-cta" style="margin-top:16px;">
+          <a href="tel:3152171673" class="btn-hero-primary" style="padding:.8em 1.3em; font-size:.8rem;">Talk Now</a>
+          <a href="mailto:catherine@hrbaclaw.com" class="btn-outline-light" style="padding:.8em 1.3em; font-size:.8rem;">Send Email</a>
+        </div>
       </div>
     </div>
     <div class="footer-bottom">
@@ -1691,7 +1715,8 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
 
 <!-- ============ STICKY MOBILE CTA ============ -->
 <div class="sticky-cta" id="stickyCta">
-  <a href="tel:3152171673" class="btn-header-primary">Call for a Free Consultation</a>
+  <a href="tel:3152171673" class="btn-header-primary" style="flex:1;">Talk Now</a>
+  <a href="mailto:catherine@hrbaclaw.com" class="btn-outline-dark" style="flex:1; display:flex; align-items:center; justify-content:center;">Send Email</a>
 </div>
 
 <script>
