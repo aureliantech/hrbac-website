@@ -1283,13 +1283,10 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
       <ul>
         <li><a href="/about">About</a></li>
         <li>
-          <button class="nav-trigger" id="triggerPatents" aria-expanded="false" aria-controls="megaPatents">
-            Patents
-            <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
-          </button>
+          <a href="/patent-landing">Patents</a>
         </li>
         <li>
-          <a href="/trademarks/trademark-attorney">Trademarks</a>
+          <a href="/trademark-landing">Trademarks</a>
         </li>
         <li>
           <a href="/copyright">Copyright</a>
@@ -1305,63 +1302,13 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
     </button>
   </div>
 
-  <!-- Patents mega-menu -->
-  <div class="mega-panel" id="megaPatents">
-    <div class="mega-inner">
-      <div class="mega-grid">
-        <a class="mega-tile" href="/patents/medical-device-patent-attorney">
-          <span class="mega-thumb"><img src="https://images.unsplash.com/photo-1504439468489-c8920d796a29?auto=format&fit=crop&w=200&q=80" alt="" loading="lazy" onerror="this.style.display='none'"></span>
-          <span class="mega-tile-body">
-            <span class="mega-tile-head"><span class="mega-no">01</span><span class="mega-tile-title">Medical &amp; Surgical Devices</span></span>
-            <span class="mega-tile-desc">Endoscopes, surgical instruments, patient monitoring</span>
-          </span>
-        </a>
-        <a class="mega-tile" href="/patents/software-patent-attorney">
-          <span class="mega-thumb"><img src="https://images.unsplash.com/photo-1569748130764-3fed0c102c59?auto=format&fit=crop&w=200&q=80" alt="" loading="lazy" onerror="this.style.display='none'"></span>
-          <span class="mega-tile-body">
-            <span class="mega-tile-head"><span class="mega-no">02</span><span class="mega-tile-title">Software</span></span>
-            <span class="mega-tile-desc">SaaS, applications, platforms</span>
-          </span>
-        </a>
-        <a class="mega-tile" href="/patents/machine-learning-ai-patent-attorney">
-          <span class="mega-thumb"><img src="https://images.unsplash.com/photo-1674027444485-cec3da58eef4?auto=format&fit=crop&w=200&q=80" alt="" loading="lazy" onerror="this.style.display='none'"></span>
-          <span class="mega-tile-body">
-            <span class="mega-tile-head"><span class="mega-no">03</span><span class="mega-tile-title">Machine Learning &amp; AI</span></span>
-            <span class="mega-tile-desc">Models, pipelines, applied ML systems</span>
-          </span>
-        </a>
-        <a class="mega-tile is-overview" href="/patents/prosecution-overview">
-          <span class="mega-tile-body">
-            <span class="mega-tile-head"><span class="mega-no">04</span><span class="mega-tile-title">Prosecution Overview</span></span>
-            <span class="mega-tile-desc">Not sure? See all patent services</span>
-          </span>
-        </a>
-      </div>
-      <div class="mega-feature">
-        <span class="mega-feature-label">Free Consultation</span>
-        <p class="mega-feature-text">Not sure which fits your invention?</p>
-        <p class="mega-feature-sub">Talk it through directly with the attorney who will file it.</p>
-        <a href="tel:3152171673" class="mega-feature-cta">Call for a free consultation →</a>
-      </div>
-    </div>
-  </div>
-
   <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
     <ul>
       <li><a href="/about">About</a></li>
       <li>
-        <button class="mobile-sub-trigger" id="mobileTriggerPatents" aria-expanded="false" aria-controls="mobileSubPatents">
-          Patents
-          <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
-        </button>
-        <ul class="mobile-sub" id="mobileSubPatents">
-          <li><a href="/patents/medical-device-patent-attorney"><span class="mega-no">01</span>Medical &amp; Surgical Devices</a></li>
-          <li><a href="/patents/software-patent-attorney"><span class="mega-no">02</span>Software</a></li>
-          <li><a href="/patents/machine-learning-ai-patent-attorney"><span class="mega-no">03</span>Machine Learning &amp; AI</a></li>
-          <li><a href="/patents/prosecution-overview"><span class="mega-no">04</span>Prosecution Overview</a></li>
-        </ul>
+        <a href="/patent-landing">Patents</a>
       </li>
-      <li><a href="/trademarks/trademark-attorney">Trademarks</a></li>
+      <li><a href="/trademark-landing">Trademarks</a></li>
       <li><a href="/copyright">Copyright</a></li>
       <li><a href="/process">How It Works</a></li>
       <li><a href="/faq">FAQ</a></li>
@@ -1562,13 +1509,13 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
       <span class="eyebrow">Protecting Something Else?</span>
       <h2>Protecting something else?</h2>
       <div class="router-row">
-        <a class="router-card" href="/trademarks/trademark-attorney">
+        <a class="router-card" href="/trademark-landing">
           <span class="router-no" aria-hidden="true">01</span>
           <div class="title">Trademark Services</div>
           <div class="desc">For a brand name, logo, or slogan</div>
           <div class="arrow">Learn more <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></div>
         </a>
-        <a class="router-card" href="/patents/prosecution-overview">
+        <a class="router-card" href="/patent-landing">
           <span class="router-no" aria-hidden="true">02</span>
           <div class="title">Patent Services</div>
           <div class="desc">For a new invention, not creative work</div>
@@ -1638,16 +1585,13 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
       <div class="footer-col">
         <h4>Patents</h4>
         <ul>
-          <li><a href="/patents/prosecution-overview">Prosecution Overview</a></li>
-          <li><a href="/patents/medical-device-patent-attorney">Medical &amp; Surgical Devices</a></li>
-          <li><a href="/patents/software-patent-attorney">Software</a></li>
-          <li><a href="/patents/machine-learning-ai-patent-attorney">Machine Learning &amp; AI</a></li>
+          <li><a href="/patent-landing">Patent Services</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Trademarks &amp; Copyright</h4>
         <ul>
-          <li><a href="/trademarks/trademark-attorney">Trademark</a></li>
+          <li><a href="/trademark-landing">Trademark</a></li>
           <li><a href="/copyright">Copyright</a></li>
         </ul>
       </div>
@@ -1706,7 +1650,7 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
   /* Desktop mega-menus */
   var megaTriggers = [
     { btn: document.getElementById('triggerPatents'), panel: document.getElementById('megaPatents') }
-  ];
+  ].filter(function(m){ return m.btn && m.panel; });
   function closeAllMega(except){
     megaTriggers.forEach(function(m){
       if (m.panel !== except) { m.panel.classList.remove('open'); m.btn.setAttribute('aria-expanded','false'); }
@@ -1755,7 +1699,7 @@ footer ::selection{ background:#7C5CF6; color:#FBFAF8; }
   /* Mobile accordion sub-menus */
   var subTriggers = [
     { btn: document.getElementById('mobileTriggerPatents'), sub: document.getElementById('mobileSubPatents') }
-  ];
+  ].filter(function(s){ return s.btn && s.sub; });
   subTriggers.forEach(function(s){
     s.btn.addEventListener('click', function(){
       var isOpen = s.sub.classList.contains('open');
